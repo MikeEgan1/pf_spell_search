@@ -9,10 +9,12 @@ class SpellList extends React.Component {
     render() {
         return (
             <div>
-                <Spell spell_name="Detect Magic" />
-                <Spell spell_name="Magic Missle" />
-                <Spell spell_name="Burning Hand" />
-                <Spell spell_name="Bless" />
+                <ul className="list-unstyled">
+                    <li><Spell spell_name="Detect Magic" /></li>
+                    <Spell spell_name="Magic Missle" />
+                    <Spell spell_name="Burning Hand" />
+                    <Spell spell_name="Bless" />
+                </ul>
 
             </div>
 
