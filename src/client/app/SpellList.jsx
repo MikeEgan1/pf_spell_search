@@ -11,9 +11,6 @@ class SpellList extends React.Component {
             <div>
                 <ul className="list-unstyled">
                     <li><Spell spell_name="Detect Magic" /></li>
-                    <Spell spell_name="Magic Missle" />
-                    <Spell spell_name="Burning Hand" />
-                    <Spell spell_name="Bless" />
                 </ul>
 
             </div>
