@@ -6,6 +6,9 @@ var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 var config = {
   entry: APP_DIR + '/index.jsx',
+  resolve: {
+      extensions: ['', '.js', '.jsx'],
+  },
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js',
@@ -19,7 +22,18 @@ var config = {
         loader : 'babel'
       }
     ]
-  }
+  },
+  devServer: {
+    hot: true,
+    inline: true,
+    port: 7700,
+    historyApiFallback: true,
+  },
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+  },
 };
 
 module.exports = config;
