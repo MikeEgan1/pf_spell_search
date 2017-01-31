@@ -1,0 +1,26 @@
+{
+  "spells":
+  [
+    {
+      "name": "Detect Magic",
+      "description" : "Detects all spells and magic items within 60 ft.",
+      "school": "Divination",
+      "classes" : "Wizard 0, Sorcerer 0",
+      "cast" : "1 Action"
+    },
+    {
+      "name": "Burning Hands",
+      "description" : "1d4/level fire damage (max 5d4).",
+      "school": "Evocation",
+      "classes" : "Wizard 1",
+      "cast" : "1 Action"
+    },
+    {
+      "name": "Bless",
+      "description" : "Allies gain +1 on attack rolls and saves against fear.",
+      "school" : "Enchantment",
+      "classes" : "Cleric 1, Oracle 1",
+      "cast" : "1 Action"
+    }
+  ]
+}

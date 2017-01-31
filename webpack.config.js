@@ -20,6 +20,11 @@ var config = {
         test : /\.jsx?/,
         include : APP_DIR,
         loader : 'babel'
+      },
+      {
+        test: /\.json$/,
+        loader: "json",
+        include: APP_DIR
       }
     ]
   },

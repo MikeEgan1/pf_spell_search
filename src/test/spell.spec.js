@@ -7,6 +7,10 @@ import Spell from '../client/app/Spell.jsx';
 describe('<Spell />', function(){
     it('should have props for spell name', function () {
         const wrapper = shallow(<Spell/>);
-        expect(wrapper.props().spell_name).to.be.defined;
+        expect(wrapper.props().name).to.be.defined;
+        expect(wrapper.props().school).to.be.defined;
+        expect(wrapper.props().description).to.be.defined;
+        expect(wrapper.props().classes).to.be.defined;
+        expect(wrapper.props().cast).to.be.defined;
     });
 })
