@@ -12,7 +12,7 @@ var config = {
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js',
-    publicPath : BUILD_DIR
+    publicPath : 'http://localhost:7700/src/client/'
   },
   module : {
     loaders : [

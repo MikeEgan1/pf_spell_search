@@ -4,14 +4,15 @@ import Header from './Header.jsx';
 import {render} from 'react-dom';
 
 class App extends React.Component {
+
   render () {
+    var jsonSpells = require('!json!./data/spells.json').spells;
     return (
-      <div>
+      <span>
         <Header />
-        <SpellList />
-      </div>
+        <SpellList spells={jsonSpells} />
+      </span>
     );
   }
 }
 render(<App/>, document.getElementById('app'));
-web
