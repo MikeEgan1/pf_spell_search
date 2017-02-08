@@ -1,5 +1,3 @@
-const FILTER_BY_SPELL_NAME = 'FILTER_BY_SPELL_NAME';
-
 export const SORT_BY = {
     NAME : 'name'
 };
@@ -9,7 +7,16 @@ export const SORT_ORDER = {
     DESC : 'desc'
 }
 
-export function filterBySpellName(text) {
-    return { type : FILTER_BY_SPELL_NAME, text }
+export function addNameFilter(filter) {
+    return {
+        type: 'ADD_NAME_FILTER',
+        filter
+    }
+}
 
+export function changeSort(sort) {
+    return {
+        type: 'CHANGE_SORT',
+        sort
+    }
 }
