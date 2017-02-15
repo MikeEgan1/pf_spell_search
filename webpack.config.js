@@ -13,7 +13,7 @@ var config = {
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js',
-    publicPath : 'http://localhost:7700/src/client/'
+    publicPath : '/public/'
   },
   module : {
     loaders : [
@@ -30,10 +30,10 @@ var config = {
     ]
   },
   devServer: {
-    hot: true,
     inline: true,
-    port: 7700,
+    port: 8080,
     historyApiFallback: true,
+    publicPath : '/public/'
   },
   externals: {
     'cheerio': 'window',

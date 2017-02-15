@@ -23,6 +23,7 @@ class SpellList extends React.Component {
                         <th onClick={() => this.props.onChangeSort("school")}>School</th>
                         <th onClick={() => this.props.onChangeSort("classes")}>Classes</th>
                         <th onClick={() => this.props.onChangeSort("cast")}>Cast Time</th>
+                        <th onClick={() => this.props.onChangeSort("source")}>Source</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,7 +33,8 @@ class SpellList extends React.Component {
                             description={spell.description}
                             school={spell.school}
                             cast={spell.cast}
-                            classes={spell.classes} />
+                            classes={spell.classes}
+                            source={spell.source} />
                     })}
                 </tbody>
             </table>

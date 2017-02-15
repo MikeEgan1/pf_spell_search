@@ -20,7 +20,7 @@ class Header extends React.Component {
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Loot Generator</a>
-                    </li>`
+                    </li>
                 </ul>
             </nav>
         )

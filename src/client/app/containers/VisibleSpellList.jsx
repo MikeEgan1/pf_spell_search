@@ -6,9 +6,16 @@ import { changeSort } from '../actions';
 const getVisibleSpells = (state) => {
     var spells = filterByFieldName(state.spells, state.filters, "name");
 
-    spells.sort(function(a, b) {
+    if(Array.isArray(spells[0][state.sort])) {
+      spells.sort(function(a, b) {
+        return a[state.sort][0].localeCompare(b[state.sort][0]) * (state.sort_order === "asc" ? 1 : -1);
+      });
+    } else {
+      spells.sort(function(a, b) {
         return a[state.sort].localeCompare(b[state.sort]) * (state.sort_order === "asc" ? 1 : -1);
-    });
+      });
+    }
+
 
     return spells;
 };
