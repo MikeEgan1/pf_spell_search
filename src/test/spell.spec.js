@@ -6,7 +6,10 @@ import Spell from '../client/app/Spell.jsx';
 
 describe('<Spell />', function(){
     it('should have props for spell name', function () {
-        const wrapper = mount(<Spell/>);
+
+        let mockClasses = ["Wizard 0"];
+
+        const wrapper = shallow(<Spell classes = {mockClasses} />);
         expect(wrapper.props().name).to.be.defined;
         expect(wrapper.props().school).to.be.defined;
         expect(wrapper.props().description).to.be.defined;

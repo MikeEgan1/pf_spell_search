@@ -1,24 +1,28 @@
 import { connect } from 'react-redux';
 import NameFilter from '../NameFilter';
-import { addNameFilter } from '../actions';
+import { addNameFilter, toggleNameFilter } from '../actions';
 
 const mapStateToProps = (state) => {
-    return {
-        name : state.filters.name
-    }
-}
+  return {
+    name: state.filters.name,
+    showFilter: state.show_name_filter
+  }
+};
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        onNameFieldChange: (filter) => {
-            dispatch(addNameFilter(filter))
-        }
+  return {
+    onNameFieldChange: (filter) => {
+      dispatch(addNameFilter(filter))
+    },
+    onClickNameQuestion: () => {
+      dispatch(toggleNameFilter())
     }
-}
+  }
+};
 
 const NameTextField = connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(NameFilter);
 
 export default NameTextField

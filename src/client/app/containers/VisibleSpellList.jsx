@@ -1,51 +1,50 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import SpellList from '../SpellList';
 import { changeSort } from '../actions';
 
 
 const getVisibleSpells = (state) => {
-    var spells = filterByFieldName(state.spells, state.filters, "name");
+  var spells = filterByFieldName(state.spells, state.filters, "name");
 
-    if(Array.isArray(spells[0][state.sort])) {
-      spells.sort(function(a, b) {
-        return a[state.sort][0].localeCompare(b[state.sort][0]) * (state.sort_order === "asc" ? 1 : -1);
-      });
-    } else {
-      spells.sort(function(a, b) {
-        return a[state.sort].localeCompare(b[state.sort]) * (state.sort_order === "asc" ? 1 : -1);
-      });
-    }
+  if (Array.isArray(spells[0][state.sort])) {
+    spells.sort(function (a, b) {
+      return a[state.sort][0].localeCompare(b[state.sort][0]) * (state.sort_order === "asc" ? 1 : -1);
+    });
+  } else {
+    spells.sort(function (a, b) {
+      return a[state.sort].localeCompare(b[state.sort]) * (state.sort_order === "asc" ? 1 : -1);
+    });
+  }
 
-
-    return spells;
+  return spells;
 };
 
 const filterByFieldName = (spells, filters, field) => {
-    return spells.filter(function(el){
-        return filters[field] === "" || el[field].toLowerCase().indexOf(filters[field].toLowerCase()) > -1;
-    });
+  return spells.filter(function (el) {
+    return filters[field] === "" || el[field].toLowerCase().indexOf(filters[field].toLowerCase()) > -1;
+  });
 }
 
 const mapStateToProps = (state) => {
-    return {
-        spells : getVisibleSpells(state),
-        sort : state.sort,
-        sort_order : state.sort_order,
-        filters : state.filters
-    }
+  return {
+    spells: getVisibleSpells(state),
+    sort: state.sort,
+    sort_order: state.sort_order,
+    filters: state.filters
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        onChangeSort: (sort) => {
-            dispatch(changeSort(sort))
-        }
+  return {
+    onChangeSort: (sort) => {
+      dispatch(changeSort(sort))
     }
+  }
 };
 
 const VisibleSpellList = connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(SpellList);
 
 export default VisibleSpellList

@@ -2,10 +2,10 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import SpellList from '../client/app/SpellList.jsx';
-import Spell from '../client/app/Spell.jsx';
+import SpellList from '../client/app/SpellList';
+import Spell from '../client/app/Spell';
 
-var test_spells = [
+var mockSpells = [
     {
         "name": "Detect Magic",
         "description" : "Detects all spells and magic items within 60 ft.",
@@ -18,8 +18,7 @@ var test_spells = [
 
 describe('<SpellList />', function(){
     it('contains a <Spell /> component', function () {
-        const wrapper = mount(<SpellList />);
-        wrapper.setState({spells : test_spells})
+        const wrapper = shallow(<SpellList spells={mockSpells}/>);
         expect(wrapper.find(Spell)).to.have.length(1);
     });
 })
