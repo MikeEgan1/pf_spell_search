@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import SchoolFilter from '../components/SchoolFilter';
+import { toggleSchoolFilter, addSchoolFilter } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -10,11 +11,11 @@ const mapStateToProps = (state) => {
 
 const mapDistachToProps = (dispatch) => {
   return {
-    onSchoolChecked: (checked) => {
-      return;
+    onSchoolChecked: (event) => {
+      dispatch(addSchoolFilter(event.target.value));
     },
     onClickSchoolQuestion: () => {
-      dispatch(toggleSchooFilter());
+      dispatch(toggleSchoolFilter());
     }
   }
 };
@@ -23,3 +24,5 @@ const SchoolFilterContainer = connect(
   mapStateToProps,
   mapDistachToProps,
 )(SchoolFilter);
+
+export default SchoolFilterContainer;

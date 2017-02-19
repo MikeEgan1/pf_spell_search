@@ -1,6 +1,7 @@
 import React from 'react';
 import Spell from './Spell'
 import NameTextField from './containers/NameTextField';
+import SchoolFilterContainer from './containers/SchoolFilterContainer';
 
 class SpellList extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class SpellList extends React.Component {
         <tr>
           <th><span onClick={() => this.props.onChangeSort("name")}>Name</span> <NameTextField /></th>
           <th><span onClick={() => this.props.onChangeSort("description")}>Description</span></th>
-          <th><span onClick={() => this.props.onChangeSort("school")}>School</span></th>
+          <th><span onClick={() => this.props.onChangeSort("school")}>School</span><SchoolFilterContainer/></th>
           <th><span onClick={() => this.props.onChangeSort("classes")}>Classes</span></th>
           <th><span onClick={() => this.props.onChangeSort("cast")}>Cast Time</span></th>
           <th><span onClick={() => this.props.onChangeSort("source")}>Source</span></th>

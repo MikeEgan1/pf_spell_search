@@ -14,6 +14,13 @@ export function addNameFilter(filter) {
   }
 }
 
+export function addSchoolFilter(school) {
+  return {
+    type: 'ADD_SCHOOL_FILTER',
+    school
+  }
+}
+
 export function changeSort(sort) {
   return {
     type: 'CHANGE_SORT',
@@ -27,7 +34,7 @@ export function toggleNameFilter() {
   }
 }
 
-export function toggleSchooFilter() {
+export function toggleSchoolFilter() {
   return {
     type: 'TOOGLE_SCHOOL_FILTER'
   }

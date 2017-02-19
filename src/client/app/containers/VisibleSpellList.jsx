@@ -5,6 +5,7 @@ import { changeSort } from '../actions';
 
 const getVisibleSpells = (state) => {
   var spells = filterByFieldName(state.spells, state.filters, "name");
+  spells = filterBySchool(state.spells, state.filters, "school");
 
   if (Array.isArray(spells[0][state.sort])) {
     spells.sort(function (a, b) {
@@ -23,6 +24,12 @@ const filterByFieldName = (spells, filters, field) => {
   return spells.filter(function (el) {
     return filters[field] === "" || el[field].toLowerCase().indexOf(filters[field].toLowerCase()) > -1;
   });
+}
+
+const filterBySchool = (spells, filters, field) => {
+  return spells.filter(function(spell) {
+    return filters[field].length == 0 || filters[field].indexOf(spell[field]) > -1;
+  })
 }
 
 const mapStateToProps = (state) => {
