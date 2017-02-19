@@ -1,28 +1,28 @@
 import { connect } from 'react-redux';
 import SchoolFilter from '../components/SchoolFilter';
-import { toggleSchoolFilter, addSchoolFilter } from '../actions';
+import { toggleVisibilityFilter, addSchoolFilter } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
     schools: state.filters.schools,
-    showFilter: state.show_school_filter
+    showFilter: state.visible_filters.school
   }
 };
 
-const mapDistachToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onSchoolChecked: (event) => {
       dispatch(addSchoolFilter(event.target.value));
     },
-    onClickSchoolQuestion: () => {
-      dispatch(toggleSchoolFilter());
+    onClickSchoolQuestion: (filter) => {
+      dispatch(toggleVisibilityFilter(filter));
     }
   }
 };
 
 const SchoolFilterContainer = connect(
   mapStateToProps,
-  mapDistachToProps,
+  mapDispatchToProps,
 )(SchoolFilter);
 
 export default SchoolFilterContainer;

@@ -7,8 +7,8 @@
       "school": "Divination",
       "classes" :
       [
-        "Wizard 0",
-        "Sorcerer 0"
+        "Wizard",
+        "Sorcerer"
       ],
       "cast" : "1 Action",
       "source" : "Core Rulebook"
@@ -19,7 +19,7 @@
       "school": "Evocation",
       "classes" :
       [
-        "Wizard 1"
+        "Wizard"
       ],
       "cast" : "1 Action",
       "source" : "Core Rulebook"
@@ -30,8 +30,8 @@
       "school" : "Enchantment",
       "classes" :
       [
-        "Cleric 1",
-        "Oracle 1"
+        "Cleric",
+        "Oracle"
       ],
       "cast" : "1 Action",
       "source" : "Core Rulebook"
@@ -42,10 +42,10 @@
       "school" : "Illusion",
       "classes" :
       [
-        "Bard 0",
-        "Magus 0",
-        "Sorcerer 0",
-        "Wizard 0"
+        "Bard",
+        "Magus",
+        "Sorcerer",
+        "Wizard"
       ],
       "cast" : "1 Action",
       "source" : "Core Rulebook"

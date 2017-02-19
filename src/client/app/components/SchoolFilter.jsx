@@ -22,13 +22,13 @@ class SchoolFilter extends React.Component {
     if(this.props.showFilter) {
       return(
         <span>
-          <span onClick={() => this.props.onClickSchoolQuestion()}>[?]</span>
+          <span onClick={() => this.props.onClickSchoolQuestion("school")}>[?]</span>
           <CheckBoxFilter options={spell_schools} onChange={this.props.onSchoolChecked} />
         </span>
       )
     } else {
       return (
-        <span onClick={() => this.props.onClickSchoolQuestion()}>[?]</span>
+        <span onClick={() => this.props.onClickSchoolQuestion("school")}>[?]</span>
       )
     }
   }

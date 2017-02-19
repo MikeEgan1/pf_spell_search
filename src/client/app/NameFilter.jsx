@@ -15,13 +15,13 @@ class NameFilter extends React.Component {
     if (this.props.showFilter) {
       return (
         <span>
-          <span onClick={() => this.props.onClickNameQuestion()}>[?]</span>
+          <span onClick={() => this.props.onClickNameQuestion("name")}>[?]</span>
           <input type="text" onChange={this.handleChange.bind(this)}/>
         </span>
       )
     } else {
       return (
-        <span onClick={() => this.props.onClickNameQuestion()}>[?]</span>
+        <span onClick={() => this.props.onClickNameQuestion("name")}>[?]</span>
       )
     }
 

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import NameFilter from '../NameFilter';
-import { addNameFilter, toggleNameFilter } from '../actions';
+import { addNameFilter, toggleVisibilityFilter } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
     name: state.filters.name,
-    showFilter: state.show_name_filter
+    showFilter: state.visible_filters.name
   }
 };
 
@@ -14,8 +14,8 @@ const mapDispatchToProps = (dispatch) => {
     onNameFieldChange: (filter) => {
       dispatch(addNameFilter(filter))
     },
-    onClickNameQuestion: () => {
-      dispatch(toggleNameFilter())
+    onClickNameQuestion: (filter) => {
+      dispatch(toggleVisibilityFilter(filter))
     }
   }
 };

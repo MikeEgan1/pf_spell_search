@@ -7,12 +7,20 @@ const getVisibleSpells = (state) => {
   var spells = state.spells;
   for(var filter_item in state.filters) {
     spells = spells.filter(function(spell) {
-      if(Array.isArray(state.filters[filter_item])) {
+      if(Array.isArray(state.filters[filter_item]) && Array.isArray(spell[filter_item])) {
+        return state.filters[filter_item].length == 0 || state.filters[filter_item].filter(function(filter){
+            return spell[filter_item].indexOf(filter) > -1;
+          }).length;
+      } else if(Array.isArray(state.filters[filter_item])) {
         return state.filters[filter_item].length == 0 || state.filters[filter_item].indexOf(spell[filter_item]) > -1;
       } else {
         return state.filters[filter_item] === "" || spell[filter_item].toLowerCase().indexOf(state.filters[filter_item].toLowerCase()) > -1;
       }
     });
+  }
+
+  if(spells.length == 0) {
+    return spells;
   }
 
   if (Array.isArray(spells[0][state.sort])) {

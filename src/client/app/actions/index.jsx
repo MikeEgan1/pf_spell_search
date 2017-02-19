@@ -21,6 +21,13 @@ export function addSchoolFilter(school) {
   }
 }
 
+export function addClassFilter(class_name) {
+  return {
+    type: 'ADD_CLASS_FILTER',
+    class_name
+  }
+}
+
 export function changeSort(sort) {
   return {
     type: 'CHANGE_SORT',
@@ -28,14 +35,9 @@ export function changeSort(sort) {
   }
 }
 
-export function toggleNameFilter() {
+export function toggleVisibilityFilter(filter) {
   return {
-    type: 'TOGGLE_NAME_FILTER'
-  }
-}
-
-export function toggleSchoolFilter() {
-  return {
-    type: 'TOOGLE_SCHOOL_FILTER'
+    type: 'TOGGLE_FILTER_VISIBILITY',
+    filter: filter
   }
 }
