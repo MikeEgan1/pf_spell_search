@@ -7,15 +7,15 @@ class CheckBoxFilter extends React.Component {
 
   render() {
     return(
-      <span>
+      <ul className="list-unstyled">
       {this.props.options.map(function (option) {
-        return <span><input
+        return <li><input
           type="checkbox"
           value={option}
           onChange={this.props.onChange}
-        /> {option}</span>
+        /> {option}</li>
       }.bind(this))}
-      </span>
+      </ul>
     )
   }
 }
