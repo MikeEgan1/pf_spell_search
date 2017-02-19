@@ -7,6 +7,8 @@ const classes = [
   'Druid',
   'Paladin',
   'Ranger',
+  'Sorcerer',
+  'Wizard'
 ];
 
 class ClassFilter extends React.Component {

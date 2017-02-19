@@ -30,8 +30,7 @@
       "school" : "Enchantment",
       "classes" :
       [
-        "Cleric",
-        "Oracle"
+        "Cleric"
       ],
       "cast" : "1 Action",
       "source" : "Core Rulebook"
