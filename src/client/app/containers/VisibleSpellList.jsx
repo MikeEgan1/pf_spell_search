@@ -4,8 +4,16 @@ import { changeSort } from '../actions';
 
 
 const getVisibleSpells = (state) => {
-  var spells = filterByFieldName(state.spells, state.filters, "name");
-  spells = filterBySchool(state.spells, state.filters, "school");
+  var spells = state.spells;
+  for(var filter_item in state.filters) {
+    spells = spells.filter(function(spell) {
+      if(Array.isArray(state.filters[filter_item])) {
+        return state.filters[filter_item].length == 0 || state.filters[filter_item].indexOf(spell[filter_item]) > -1;
+      } else {
+        return state.filters[filter_item] === "" || spell[filter_item].toLowerCase().indexOf(state.filters[filter_item].toLowerCase()) > -1;
+      }
+    });
+  }
 
   if (Array.isArray(spells[0][state.sort])) {
     spells.sort(function (a, b) {
@@ -20,17 +28,6 @@ const getVisibleSpells = (state) => {
   return spells;
 };
 
-const filterByFieldName = (spells, filters, field) => {
-  return spells.filter(function (el) {
-    return filters[field] === "" || el[field].toLowerCase().indexOf(filters[field].toLowerCase()) > -1;
-  });
-}
-
-const filterBySchool = (spells, filters, field) => {
-  return spells.filter(function(spell) {
-    return filters[field].length == 0 || filters[field].indexOf(spell[field]) > -1;
-  })
-}
 
 const mapStateToProps = (state) => {
   return {
